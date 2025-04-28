@@ -1,91 +1,93 @@
-# Diagram RAG Chatbot
+# Illustra
 
-A FastAPI-based chatbot application that combines Retrieval-Augmented Generation (RAG) with diagram generation capabilities. This application allows users to interact with an AI assistant that can generate and retrieve diagrams based on natural language queries.
+A modern web application built with React, TypeScript, and Vite.
 
-## Features
+## 🚀 Deployment
 
-- User authentication and authorization
-- Chat session management
-- Diagram generation and retrieval
-- RAG-based responses
-- Secure API endpoints
-- CORS support
-- JWT-based authentication
+The application is deployed on Vercel:
+- Production: [https://illustra-nine.vercel.app](https://illustra-nine.vercel.app)
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Backend**: FastAPI
-- **Database**: Supabase
-- **AI/ML**: 
-  - Google Gemini AI
-  - Sentence Transformers
-- **Authentication**: JWT
-- **Environment**: Python 3.10
+- **Frontend Framework**: React 18
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI (built on Radix UI)
+- **State Management**: React Query
+- **Form Handling**: React Hook Form with Zod validation
+- **Routing**: React Router DOM
+- **Charts**: Recharts
+- **Date Handling**: date-fns
+- **Animations**: Tailwind CSS Animate
 
-## Prerequisites
-
-- Python 3.10
-- Conda (for environment management)
-- Supabase account
-- Google Gemini API key
-
-## Installation
+## 📦 Installation
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
-cd <repository-name>
+git clone [your-repository-url]
+cd illustra
 ```
 
-2. Create and activate the Conda environment:
+2. Install dependencies:
 ```bash
-conda env create -f requirements.yaml
-conda activate diagram-rag-chatbot-env
+npm install
 ```
 
-3. Create a `.env` file in the root directory with the following variables:
+3. Create a `.env` file in the root directory and add the following:
 ```env
-GEMINI_API_KEY=your_gemini_api_key
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
-JWT_SECRET_KEY=your_jwt_secret_key
+VITE_API_URL=your_api_url
 ```
 
-## Running the Application
+## 🚀 Development
 
-1. Start the FastAPI server:
+To start the development server:
+
 ```bash
-uvicorn main:app --reload
+npm run dev
 ```
 
-The application will be available at `http://localhost:8000`
+## 🏗️ Build
 
-## API Documentation
+To build the project:
 
-Once the server is running, you can access the interactive API documentation at:
-- Swagger UI: `http://localhost:8000/docs`
-- ReDoc: `http://localhost:8000/redoc`
+```bash
+npm run build
+```
 
-## API Endpoints
+For development build:
+```bash
+npm run build:dev
+```
 
-### Authentication
-- `POST /auth/signup` - Register a new user
-- `POST /auth/signin` - Login existing user
-- `GET /auth/me` - Get current user profile
+## 📁 Project Structure
 
-### Chat
-- `GET /chat/sessions` - List all chat sessions
-- `POST /chat/sessions` - Create a new chat session
-- `POST /chat` - Send a message and get response
-- `GET /chat/history/{session_id}` - Get chat history for a session
+- `src/` - Source code
+  - `components/` - Reusable UI components
+  - `config/` - Configuration files
+  - `pages/` - Page components
+  - `hooks/` - Custom React hooks
+  - `utils/` - Utility functions
+  - `types/` - TypeScript type definitions
 
-## Security
+## 🔧 API Configuration
 
-- All endpoints except `/auth/signup` and `/auth/signin` require JWT authentication
-- CORS is configured to allow cross-origin requests
-- Environment variables are used for sensitive configuration
+The API configuration is located in `src/config/api.ts`:
+```typescript
+export const API_CONFIG = {
+  baseURL: import.meta.env.VITE_API_URL || "https://2466-111-92-114-35.ngrok-free.app",
+};
+```
 
-## Contributing
+## 📝 Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build for development
+- `npm run lint` - Run ESLint
+- `npm run preview` - Preview production build
+
+## 🤝 Contributing
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -93,6 +95,6 @@ Once the server is running, you can access the interactive API documentation at:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## License
+## 📄 License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License.
